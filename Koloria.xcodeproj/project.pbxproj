@@ -1,0 +1,650 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5538FC812CB7229B000CCE05 /* KoloriaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557B2BC32CB70F7E00B08719 /* KoloriaTests.swift */; };
+		557B2BB22CB70F6900B08719 /* KoloriaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557B2BB12CB70F6900B08719 /* KoloriaApp.swift */; };
+		557B2BB42CB70F6900B08719 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557B2BB32CB70F6900B08719 /* ContentView.swift */; };
+		557B2BB62CB70F7D00B08719 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 557B2BB52CB70F7D00B08719 /* Assets.xcassets */; };
+		557B2BBA2CB70F7D00B08719 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 557B2BB92CB70F7D00B08719 /* Preview Assets.xcassets */; };
+		557B2BCE2CB70F7E00B08719 /* KoloriaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557B2BCD2CB70F7E00B08719 /* KoloriaUITests.swift */; };
+		557B2BD02CB70F7E00B08719 /* KoloriaUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557B2BCF2CB70F7E00B08719 /* KoloriaUITestsLaunchTests.swift */; };
+		557B2BE42CB7113E00B08719 /* OpenCVWrapper.mm in Sources */ = {isa = PBXBuildFile; fileRef = 557B2BE32CB7113E00B08719 /* OpenCVWrapper.mm */; };
+		55CF6DF22CB729D800898120 /* opencv2.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 557B2BDD2CB70FC100B08719 /* opencv2.xcframework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		557B2BC02CB70F7E00B08719 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 557B2BA62CB70F6900B08719 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 557B2BAD2CB70F6900B08719;
+			remoteInfo = Filtroone;
+		};
+		557B2BCA2CB70F7E00B08719 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 557B2BA62CB70F6900B08719 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 557B2BAD2CB70F6900B08719;
+			remoteInfo = Filtroone;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		557B2BAE2CB70F6900B08719 /* Koloria.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Koloria.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		557B2BB12CB70F6900B08719 /* KoloriaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KoloriaApp.swift; sourceTree = "<group>"; };
+		557B2BB32CB70F6900B08719 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		557B2BB52CB70F7D00B08719 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		557B2BB72CB70F7D00B08719 /* Koloria.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Koloria.entitlements; sourceTree = "<group>"; };
+		557B2BB92CB70F7D00B08719 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		557B2BBF2CB70F7E00B08719 /* KoloriaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KoloriaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		557B2BC32CB70F7E00B08719 /* KoloriaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KoloriaTests.swift; sourceTree = "<group>"; };
+		557B2BC92CB70F7E00B08719 /* KoloriaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KoloriaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		557B2BCD2CB70F7E00B08719 /* KoloriaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KoloriaUITests.swift; sourceTree = "<group>"; };
+		557B2BCF2CB70F7E00B08719 /* KoloriaUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KoloriaUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		557B2BDD2CB70FC100B08719 /* opencv2.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = opencv2.xcframework; path = ../../../../opencv/opencv/build_all/opencv2.xcframework; sourceTree = "<group>"; };
+		557B2BE22CB7113E00B08719 /* OpenCVWrapper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OpenCVWrapper.h; sourceTree = "<group>"; };
+		557B2BE32CB7113E00B08719 /* OpenCVWrapper.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = OpenCVWrapper.mm; sourceTree = "<group>"; };
+		557B2BE52CB711AE00B08719 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		557B2BE72CB7178C00B08719 /* Koloria-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Koloria-Bridging-Header.h"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		557B2BAB2CB70F6900B08719 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				55CF6DF22CB729D800898120 /* opencv2.xcframework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		557B2BBC2CB70F7E00B08719 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		557B2BC62CB70F7E00B08719 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		557B2BA52CB70F6900B08719 = {
+			isa = PBXGroup;
+			children = (
+				557B2BB02CB70F6900B08719 /* Koloria */,
+				557B2BC22CB70F7E00B08719 /* KoloriaTests */,
+				557B2BCC2CB70F7E00B08719 /* KoloriaUITests */,
+				557B2BAF2CB70F6900B08719 /* Products */,
+				557B2BDC2CB70FC100B08719 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		557B2BAF2CB70F6900B08719 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				557B2BAE2CB70F6900B08719 /* Koloria.app */,
+				557B2BBF2CB70F7E00B08719 /* KoloriaTests.xctest */,
+				557B2BC92CB70F7E00B08719 /* KoloriaUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		557B2BB02CB70F6900B08719 /* Koloria */ = {
+			isa = PBXGroup;
+			children = (
+				557B2BB12CB70F6900B08719 /* KoloriaApp.swift */,
+				557B2BB32CB70F6900B08719 /* ContentView.swift */,
+				557B2BE72CB7178C00B08719 /* Koloria-Bridging-Header.h */,
+				557B2BB52CB70F7D00B08719 /* Assets.xcassets */,
+				557B2BB72CB70F7D00B08719 /* Koloria.entitlements */,
+				557B2BB82CB70F7D00B08719 /* Preview Content */,
+				557B2BE22CB7113E00B08719 /* OpenCVWrapper.h */,
+				557B2BE32CB7113E00B08719 /* OpenCVWrapper.mm */,
+				557B2BE52CB711AE00B08719 /* PrefixHeader.pch */,
+			);
+			path = Koloria;
+			sourceTree = "<group>";
+		};
+		557B2BB82CB70F7D00B08719 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				557B2BB92CB70F7D00B08719 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		557B2BC22CB70F7E00B08719 /* KoloriaTests */ = {
+			isa = PBXGroup;
+			children = (
+				557B2BC32CB70F7E00B08719 /* KoloriaTests.swift */,
+			);
+			path = KoloriaTests;
+			sourceTree = "<group>";
+		};
+		557B2BCC2CB70F7E00B08719 /* KoloriaUITests */ = {
+			isa = PBXGroup;
+			children = (
+				557B2BCD2CB70F7E00B08719 /* KoloriaUITests.swift */,
+				557B2BCF2CB70F7E00B08719 /* KoloriaUITestsLaunchTests.swift */,
+			);
+			path = KoloriaUITests;
+			sourceTree = "<group>";
+		};
+		557B2BDC2CB70FC100B08719 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				557B2BDD2CB70FC100B08719 /* opencv2.xcframework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		557B2BAD2CB70F6900B08719 /* Koloria */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 557B2BD32CB70F7E00B08719 /* Build configuration list for PBXNativeTarget "Koloria" */;
+			buildPhases = (
+				557B2BAA2CB70F6900B08719 /* Sources */,
+				557B2BAB2CB70F6900B08719 /* Frameworks */,
+				557B2BAC2CB70F6900B08719 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Koloria;
+			productName = Filtroone;
+			productReference = 557B2BAE2CB70F6900B08719 /* Koloria.app */;
+			productType = "com.apple.product-type.application";
+		};
+		557B2BBE2CB70F7E00B08719 /* KoloriaTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 557B2BD62CB70F7E00B08719 /* Build configuration list for PBXNativeTarget "KoloriaTests" */;
+			buildPhases = (
+				557B2BBB2CB70F7E00B08719 /* Sources */,
+				557B2BBC2CB70F7E00B08719 /* Frameworks */,
+				557B2BBD2CB70F7E00B08719 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				557B2BC12CB70F7E00B08719 /* PBXTargetDependency */,
+			);
+			name = KoloriaTests;
+			productName = FiltrooneTests;
+			productReference = 557B2BBF2CB70F7E00B08719 /* KoloriaTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		557B2BC82CB70F7E00B08719 /* KoloriaUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 557B2BD92CB70F7E00B08719 /* Build configuration list for PBXNativeTarget "KoloriaUITests" */;
+			buildPhases = (
+				557B2BC52CB70F7E00B08719 /* Sources */,
+				557B2BC62CB70F7E00B08719 /* Frameworks */,
+				557B2BC72CB70F7E00B08719 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				557B2BCB2CB70F7E00B08719 /* PBXTargetDependency */,
+			);
+			name = KoloriaUITests;
+			productName = FiltrooneUITests;
+			productReference = 557B2BC92CB70F7E00B08719 /* KoloriaUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		557B2BA62CB70F6900B08719 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					557B2BAD2CB70F6900B08719 = {
+						CreatedOnToolsVersion = 15.0;
+						LastSwiftMigration = 1500;
+					};
+					557B2BBE2CB70F7E00B08719 = {
+						CreatedOnToolsVersion = 15.0;
+						TestTargetID = 557B2BAD2CB70F6900B08719;
+					};
+					557B2BC82CB70F7E00B08719 = {
+						CreatedOnToolsVersion = 15.0;
+						TestTargetID = 557B2BAD2CB70F6900B08719;
+					};
+				};
+			};
+			buildConfigurationList = 557B2BA92CB70F6900B08719 /* Build configuration list for PBXProject "Koloria" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 557B2BA52CB70F6900B08719;
+			productRefGroup = 557B2BAF2CB70F6900B08719 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				557B2BAD2CB70F6900B08719 /* Koloria */,
+				557B2BBE2CB70F7E00B08719 /* KoloriaTests */,
+				557B2BC82CB70F7E00B08719 /* KoloriaUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		557B2BAC2CB70F6900B08719 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				557B2BBA2CB70F7D00B08719 /* Preview Assets.xcassets in Resources */,
+				557B2BB62CB70F7D00B08719 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		557B2BBD2CB70F7E00B08719 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		557B2BC72CB70F7E00B08719 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		557B2BAA2CB70F6900B08719 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				557B2BB42CB70F6900B08719 /* ContentView.swift in Sources */,
+				557B2BB22CB70F6900B08719 /* KoloriaApp.swift in Sources */,
+				557B2BE42CB7113E00B08719 /* OpenCVWrapper.mm in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		557B2BBB2CB70F7E00B08719 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5538FC812CB7229B000CCE05 /* KoloriaTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		557B2BC52CB70F7E00B08719 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				557B2BCE2CB70F7E00B08719 /* KoloriaUITests.swift in Sources */,
+				557B2BD02CB70F7E00B08719 /* KoloriaUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		557B2BC12CB70F7E00B08719 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 557B2BAD2CB70F6900B08719 /* Koloria */;
+			targetProxy = 557B2BC02CB70F7E00B08719 /* PBXContainerItemProxy */;
+		};
+		557B2BCB2CB70F7E00B08719 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 557B2BAD2CB70F6900B08719 /* Koloria */;
+			targetProxy = 557B2BCA2CB70F7E00B08719 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		557B2BD12CB70F7E00B08719 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		557B2BD22CB70F7E00B08719 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		557B2BD42CB70F7E00B08719 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = Koloria/Koloria.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Koloria/Preview Content\"";
+				DEVELOPMENT_TEAM = 5H5A53D8C4;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dt.proto.cv.Koloria;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Koloria/Koloria-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		557B2BD52CB70F7E00B08719 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = Koloria/Koloria.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Koloria/Preview Content\"";
+				DEVELOPMENT_TEAM = 5H5A53D8C4;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dt.proto.cv.Koloria;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Koloria/Koloria-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		557B2BD72CB70F7E00B08719 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5H5A53D8C4;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dt.proto.cv.KoloriaTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Koloria.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Koloria";
+			};
+			name = Debug;
+		};
+		557B2BD82CB70F7E00B08719 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5H5A53D8C4;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dt.proto.cv.KoloriaTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Koloria.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Koloria";
+			};
+			name = Release;
+		};
+		557B2BDA2CB70F7E00B08719 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5H5A53D8C4;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dt.proto.cv.KoloriaUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Koloria;
+			};
+			name = Debug;
+		};
+		557B2BDB2CB70F7E00B08719 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5H5A53D8C4;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dt.proto.cv.KoloriaUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Koloria;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		557B2BA92CB70F6900B08719 /* Build configuration list for PBXProject "Koloria" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				557B2BD12CB70F7E00B08719 /* Debug */,
+				557B2BD22CB70F7E00B08719 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		557B2BD32CB70F7E00B08719 /* Build configuration list for PBXNativeTarget "Koloria" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				557B2BD42CB70F7E00B08719 /* Debug */,
+				557B2BD52CB70F7E00B08719 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		557B2BD62CB70F7E00B08719 /* Build configuration list for PBXNativeTarget "KoloriaTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				557B2BD72CB70F7E00B08719 /* Debug */,
+				557B2BD82CB70F7E00B08719 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		557B2BD92CB70F7E00B08719 /* Build configuration list for PBXNativeTarget "KoloriaUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				557B2BDA2CB70F7E00B08719 /* Debug */,
+				557B2BDB2CB70F7E00B08719 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 557B2BA62CB70F6900B08719 /* Project object */;
+}
