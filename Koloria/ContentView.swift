@@ -12,28 +12,63 @@ struct ContentView: View {
     var body: some View {
         VStack {
             Image(uiImage: image)
-                .resizable()
-                .frame(width: 512, height: 512)
             
             Text("Filters")
             
-            Button("Grayscale") {
-                let grayImage = OpenCVWrapper.toGrayscale(image)
-                image = grayImage
+            ScrollView(.horizontal) {
+                HStack(spacing: 10) {
+                    Button("Grayscale") {
+                        let grayImage = OpenCVWrapper.toGrayscale(image)
+                        image = grayImage
+                    }.buttonStyle(BorderlessButtonStyle())
+                        .padding(.horizontal, 20)
+                        .padding(.vertical, 7)
+                        .foregroundColor(.white)
+                        .background(Color.accentColor)
+                        .cornerRadius(12)
+                    
+                    Button("Gaussian blur") {
+                        let blurImage = OpenCVWrapper.gaussianBlur(image, 125)
+                        image = blurImage
+                    }.buttonStyle(BorderlessButtonStyle())
+                        .padding(.horizontal, 20)
+                        .padding(.vertical, 7)
+                        .foregroundColor(.white)
+                        .background(Color.accentColor)
+                        .cornerRadius(12)
+                    
+                    Button("Resize") {
+                        let resizedImage = OpenCVWrapper.resize(image, 320, 320, 0)
+                        image = resizedImage
+                    }.buttonStyle(BorderlessButtonStyle())
+                        .padding(.horizontal, 20)
+                        .padding(.vertical, 7)
+                        .foregroundColor(.white)
+                        .background(Color.accentColor)
+                        .cornerRadius(12)
+                }
             }
             
-            Button("Gaussian blur") {
-                let blurImage = OpenCVWrapper.gaussianBlur(image, 125)
-                image = blurImage
-            }
-            
-            Button("Resize") {
-                let resizedImage = OpenCVWrapper.resize(image, 320, 320, 0)
-                image = resizedImage
-            }
-            
-            Button("Reset") {
-                image = UIImage(named: "lena")!
+            HStack{
+                Button("Reset") {
+                    image = UIImage(named: "lena")!
+                }.buttonStyle(BorderlessButtonStyle())
+                    .padding(.horizontal, 20)
+                    .padding(.vertical, 7)
+                    .foregroundColor(.white)
+                    .background(Color.red)
+                    .cornerRadius(12)
+                
+                Button("Upload") {
+                    
+                }
+                .buttonStyle(BorderlessButtonStyle())
+                    .padding(.horizontal, 20)
+                    .padding(.vertical, 7)
+                    .foregroundColor(.white)
+                    .background(Color.green)
+                    .cornerRadius(12)
+                    
             }
         }
     }
