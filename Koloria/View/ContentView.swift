@@ -6,20 +6,23 @@
 //
 
 import SwiftUI
+import PhotosUI
 
 struct ContentView: View {
-    @State private var image = UIImage(named: "lena")!
+    
+    @State private var viewModel = HomeViewModel()
+    
     var body: some View {
         VStack {
-            Image(uiImage: image)
+            Image(uiImage: viewModel.image)
             
             Text("Filters")
             
             ScrollView(.horizontal) {
                 HStack(spacing: 10) {
                     Button("Grayscale") {
-                        let grayImage = OpenCVWrapper.toGrayscale(image)
-                        image = grayImage
+                        let grayImage = OpenCVWrapper.toGrayscale(viewModel.image)
+                        viewModel.image = grayImage
                     }.buttonStyle(BorderlessButtonStyle())
                         .padding(.horizontal, 20)
                         .padding(.vertical, 7)
@@ -28,8 +31,8 @@ struct ContentView: View {
                         .cornerRadius(12)
                     
                     Button("Gaussian blur") {
-                        let blurImage = OpenCVWrapper.gaussianBlur(image, 125)
-                        image = blurImage
+                        let blurImage = OpenCVWrapper.gaussianBlur(viewModel.image, 125)
+                        viewModel.image = blurImage
                     }.buttonStyle(BorderlessButtonStyle())
                         .padding(.horizontal, 20)
                         .padding(.vertical, 7)
@@ -38,8 +41,8 @@ struct ContentView: View {
                         .cornerRadius(12)
                     
                     Button("Resize") {
-                        let resizedImage = OpenCVWrapper.resize(image, 320, 320, 0)
-                        image = resizedImage
+                        let resizedImage = OpenCVWrapper.resize(viewModel.image, 320, 320, 0)
+                        viewModel.image = resizedImage
                     }.buttonStyle(BorderlessButtonStyle())
                         .padding(.horizontal, 20)
                         .padding(.vertical, 7)
@@ -51,24 +54,25 @@ struct ContentView: View {
             
             HStack{
                 Button("Reset") {
-                    image = UIImage(named: "lena")!
+                    viewModel.image = UIImage(named: "lena")!
                 }.buttonStyle(BorderlessButtonStyle())
                     .padding(.horizontal, 20)
                     .padding(.vertical, 7)
                     .foregroundColor(.white)
                     .background(Color.red)
                     .cornerRadius(12)
-                
-                Button("Upload") {
-                    
+                  
+                PhotosPicker(selection: $viewModel.imageSelection,
+                             matching: .images,
+                             photoLibrary: .shared()) {
+                    Text("Upload")
+                        .buttonStyle(BorderlessButtonStyle())
+                        .padding(.horizontal, 20)
+                        .padding(.vertical, 7)
+                        .foregroundColor(.white)
+                        .background(Color.green)
+                        .cornerRadius(12)
                 }
-                .buttonStyle(BorderlessButtonStyle())
-                    .padding(.horizontal, 20)
-                    .padding(.vertical, 7)
-                    .foregroundColor(.white)
-                    .background(Color.green)
-                    .cornerRadius(12)
-                    
             }
         }
     }

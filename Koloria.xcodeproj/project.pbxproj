@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		552CCA792CBAC62D00A74D58 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552CCA782CBAC62D00A74D58 /* HomeViewModel.swift */; };
 		5538FC812CB7229B000CCE05 /* KoloriaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557B2BC32CB70F7E00B08719 /* KoloriaTests.swift */; };
 		557B2BB22CB70F6900B08719 /* KoloriaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557B2BB12CB70F6900B08719 /* KoloriaApp.swift */; };
 		557B2BB42CB70F6900B08719 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557B2BB32CB70F6900B08719 /* ContentView.swift */; };
@@ -36,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		552CCA782CBAC62D00A74D58 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		557B2BAE2CB70F6900B08719 /* Koloria.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Koloria.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		557B2BB12CB70F6900B08719 /* KoloriaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KoloriaApp.swift; sourceTree = "<group>"; };
 		557B2BB32CB70F6900B08719 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -80,6 +82,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		552CCA772CBAC61900A74D58 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				552CCA782CBAC62D00A74D58 /* HomeViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		557B2BA52CB70F6900B08719 = {
 			isa = PBXGroup;
 			children = (
@@ -104,15 +114,15 @@
 		557B2BB02CB70F6900B08719 /* Koloria */ = {
 			isa = PBXGroup;
 			children = (
+				5592A23F2CB967DC001CF410 /* View */,
 				557B2BB12CB70F6900B08719 /* KoloriaApp.swift */,
-				557B2BB32CB70F6900B08719 /* ContentView.swift */,
+				557B2BE52CB711AE00B08719 /* PrefixHeader.pch */,
 				557B2BE72CB7178C00B08719 /* Koloria-Bridging-Header.h */,
+				557B2BE22CB7113E00B08719 /* OpenCVWrapper.h */,
+				557B2BE32CB7113E00B08719 /* OpenCVWrapper.mm */,
 				557B2BB52CB70F7D00B08719 /* Assets.xcassets */,
 				557B2BB72CB70F7D00B08719 /* Koloria.entitlements */,
 				557B2BB82CB70F7D00B08719 /* Preview Content */,
-				557B2BE22CB7113E00B08719 /* OpenCVWrapper.h */,
-				557B2BE32CB7113E00B08719 /* OpenCVWrapper.mm */,
-				557B2BE52CB711AE00B08719 /* PrefixHeader.pch */,
 			);
 			path = Koloria;
 			sourceTree = "<group>";
@@ -148,6 +158,15 @@
 				557B2BDD2CB70FC100B08719 /* opencv2.xcframework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5592A23F2CB967DC001CF410 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				552CCA772CBAC61900A74D58 /* ViewModel */,
+				557B2BB32CB70F6900B08719 /* ContentView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -284,6 +303,7 @@
 				557B2BB42CB70F6900B08719 /* ContentView.swift in Sources */,
 				557B2BB22CB70F6900B08719 /* KoloriaApp.swift in Sources */,
 				557B2BE42CB7113E00B08719 /* OpenCVWrapper.mm in Sources */,
+				552CCA792CBAC62D00A74D58 /* HomeViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
