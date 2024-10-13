@@ -17,7 +17,7 @@ class HomeViewModel {
             if let imageSelection {
                 Task {
                     if let loaded = try? await imageSelection.loadTransferable(type: Data.self) {
-                        image = UIImage(data: loaded)!
+                        image = OpenCVWrapper.resize(UIImage(data: loaded)!, 512, 512, 0)
                     } else {
                         print("Import failed")
                     }
