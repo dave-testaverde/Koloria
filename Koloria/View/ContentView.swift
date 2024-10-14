@@ -14,6 +14,8 @@ struct ContentView: View {
     
     var body: some View {
         VStack {
+            Text("512px x 512px")
+            
             Image(uiImage: viewModel.image)
             
             Text("Filters")
@@ -21,8 +23,7 @@ struct ContentView: View {
             ScrollView(.horizontal) {
                 HStack(spacing: 10) {
                     Button("Grayscale") {
-                        let grayImage = OpenCVWrapper.toGrayscale(viewModel.image)
-                        viewModel.image = grayImage
+                        viewModel.image = OpenCVWrapper.toGrayscale(viewModel.image)
                     }.buttonStyle(BorderlessButtonStyle())
                         .padding(.horizontal, 20)
                         .padding(.vertical, 7)
@@ -31,8 +32,7 @@ struct ContentView: View {
                         .cornerRadius(12)
                     
                     Button("Gaussian blur") {
-                        let blurImage = OpenCVWrapper.gaussianBlur(viewModel.image, 125)
-                        viewModel.image = blurImage
+                        viewModel.image = OpenCVWrapper.gaussianBlur(viewModel.image, 125)
                     }.buttonStyle(BorderlessButtonStyle())
                         .padding(.horizontal, 20)
                         .padding(.vertical, 7)
@@ -40,17 +40,28 @@ struct ContentView: View {
                         .background(Color.accentColor)
                         .cornerRadius(12)
                     
-                    Button("Resize") {
-                        let resizedImage = OpenCVWrapper.resize(viewModel.image, 320, 320, 0)
-                        viewModel.image = resizedImage
+                    Button("Resize 320x320") {
+                        viewModel.image = OpenCVWrapper.resize(viewModel.image, 320, 320, 0)
                     }.buttonStyle(BorderlessButtonStyle())
                         .padding(.horizontal, 20)
                         .padding(.vertical, 7)
                         .foregroundColor(.white)
                         .background(Color.accentColor)
                         .cornerRadius(12)
+                    
+                    Button("Resize 250x250") {
+                        viewModel.image = OpenCVWrapper.resize(viewModel.image, 250, 250, 0)
+                    }.buttonStyle(BorderlessButtonStyle())
+                        .padding(.horizontal, 20)
+                        .padding(.vertical, 7)
+                        .foregroundColor(.white)
+                        .background(Color.accentColor)
+                        .cornerRadius(12)
+                    
                 }
             }
+            
+            Text("Tool")
             
             HStack{
                 Button("Reset") {
@@ -65,13 +76,16 @@ struct ContentView: View {
                 PhotosPicker(selection: $viewModel.imageSelection,
                              matching: .images,
                              photoLibrary: .shared()) {
-                    Text("Upload")
-                        .buttonStyle(BorderlessButtonStyle())
-                        .padding(.horizontal, 20)
-                        .padding(.vertical, 7)
-                        .foregroundColor(.white)
-                        .background(Color.green)
-                        .cornerRadius(12)
+                    HStack{
+                        Image(systemName: "photo.badge.plus")
+                        Text("Upload")
+                    }
+                    .buttonStyle(BorderlessButtonStyle())
+                    .padding(.horizontal, 16)
+                    .padding(.vertical, 7)
+                    .foregroundColor(.white)
+                    .background(Color.green)
+                    .cornerRadius(12)
                 }
             }
         }
