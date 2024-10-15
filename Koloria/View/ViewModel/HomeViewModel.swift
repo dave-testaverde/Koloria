@@ -10,6 +10,8 @@ import _PhotosUI_SwiftUI
 @Observable
 class HomeViewModel {
     
+    var imageFormatLabel = "512px x 512px"
+    
     var image: UIImage = UIImage(named: "lena")!
     
     var imageSelection: PhotosPickerItem? = nil {
