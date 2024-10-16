@@ -90,6 +90,18 @@ struct ContentView: View {
                     .background(Color.green)
                     .cornerRadius(12)
                 }
+                
+                HStack{
+                    Image(systemName: "camera")
+                    Button("Camera") {
+                    }
+                }
+                .buttonStyle(BorderlessButtonStyle())
+                .padding(.horizontal, 16)
+                .padding(.vertical, 7)
+                .foregroundColor(.white)
+                .background(Color.orange)
+                .cornerRadius(12)
             }
         }
     }
