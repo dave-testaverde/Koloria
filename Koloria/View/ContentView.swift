@@ -94,6 +94,7 @@ struct ContentView: View {
                 HStack{
                     Image(systemName: "camera")
                     Button("Camera") {
+                        
                     }
                 }
                 .buttonStyle(BorderlessButtonStyle())
