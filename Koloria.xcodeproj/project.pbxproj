@@ -40,6 +40,7 @@
 /* Begin PBXFileReference section */
 		552CCA782CBAC62D00A74D58 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		552CCA7B2CC1BCEE00A74D58 /* Camera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Camera.swift; sourceTree = "<group>"; };
+		552CCA7D2CC408EF00A74D58 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		557B2BAE2CB70F6900B08719 /* Koloria.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Koloria.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		557B2BB12CB70F6900B08719 /* KoloriaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KoloriaApp.swift; sourceTree = "<group>"; };
 		557B2BB32CB70F6900B08719 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -124,6 +125,7 @@
 		557B2BB02CB70F6900B08719 /* Koloria */ = {
 			isa = PBXGroup;
 			children = (
+				552CCA7D2CC408EF00A74D58 /* Info.plist */,
 				552CCA7A2CC1BCCA00A74D58 /* Controller */,
 				5592A23F2CB967DC001CF410 /* View */,
 				557B2BB12CB70F6900B08719 /* KoloriaApp.swift */,
@@ -480,6 +482,8 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Koloria/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "This app needs access to the camera for object detection features";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -521,6 +525,8 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Koloria/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "This app needs access to the camera for object detection features";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;

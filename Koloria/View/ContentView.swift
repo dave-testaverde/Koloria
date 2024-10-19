@@ -12,6 +12,8 @@ struct ContentView: View {
     
     @State private var viewModel = HomeViewModel()
     
+    @State private var showCamera = false
+    
     var body: some View {
         VStack {
             Text(viewModel.imageFormatLabel)
@@ -94,7 +96,9 @@ struct ContentView: View {
                 HStack{
                     Image(systemName: "camera")
                     Button("Camera") {
-                        
+                        self.showCamera.toggle()
+                    }.fullScreenCover(isPresented: self.$showCamera) {
+                        accessCameraView(selectedImage: $viewModel.image)
                     }
                 }
                 .buttonStyle(BorderlessButtonStyle())
