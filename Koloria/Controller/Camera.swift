@@ -39,7 +39,8 @@ class Coordinator: NSObject, UINavigationControllerDelegate, UIImagePickerContro
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         guard let selectedImage = info[.originalImage] as? UIImage else { return }
-        self.picker.selectedImage = selectedImage
+        //self.picker.selectedImage = selectedImage
+        self.picker.selectedImage = OpenCVWrapper.resize(selectedImage, 512, 512, 0)
         self.picker.isPresented.wrappedValue.dismiss()
     }
 }
