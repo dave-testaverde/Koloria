@@ -16,7 +16,7 @@ struct ContentView: View {
     
     var body: some View {
         VStack {
-            Text(viewModel.imageFormatLabel)
+            Text("\(Int(viewModel.image.size.width)) x \(Int(viewModel.image.size.height))")
             
             Image(uiImage: viewModel.image)
             
@@ -44,7 +44,6 @@ struct ContentView: View {
                     
                     Button("Resize 320x320") {
                         viewModel.image = OpenCVWrapper.resize(viewModel.image, 320, 320, 0)
-                        viewModel.imageFormatLabel = "320px x 320px"
                     }.buttonStyle(BorderlessButtonStyle())
                         .padding(.horizontal, 20)
                         .padding(.vertical, 7)
@@ -54,7 +53,6 @@ struct ContentView: View {
                     
                     Button("Resize 250x250") {
                         viewModel.image = OpenCVWrapper.resize(viewModel.image, 250, 250, 0)
-                        viewModel.imageFormatLabel = "250px x 250px"
                     }.buttonStyle(BorderlessButtonStyle())
                         .padding(.horizontal, 20)
                         .padding(.vertical, 7)
@@ -70,7 +68,6 @@ struct ContentView: View {
             HStack{
                 Button("Reset") {
                     viewModel.image = UIImage(named: "lena")!
-                    viewModel.imageFormatLabel = "512px x 512px"
                 }.buttonStyle(BorderlessButtonStyle())
                     .padding(.horizontal, 20)
                     .padding(.vertical, 7)
