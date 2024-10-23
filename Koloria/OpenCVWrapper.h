@@ -18,6 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (UIImage *) resize :(UIImage *)image :(int)width :(int)height :(int)interpolation;
 + (UIImage *) toGrayscale :(UIImage *)image;
 + (UIImage *) gaussianBlur :(UIImage *)image :(int)blurAmount;
++ (UIImage *) stackBlur :(UIImage *)image :(int)blurAmount;
 @end
 
 NS_ASSUME_NONNULL_END

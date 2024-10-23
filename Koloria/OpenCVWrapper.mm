@@ -69,6 +69,19 @@
     return grayImg;
 }
 
++ (UIImage *) stackBlur :(UIImage *)image :(int)blurAmount {
+    cv::Mat mat;
+    [image convertToMat:&mat :false];
+    
+    cv::Mat blur;
+    mat.copyTo(blur);
+    
+    cv::stackBlur(mat, blur, cv::Size(blurAmount, blurAmount));
+    
+    UIImage* blurImage = MatToUIImage(blur);
+    return blurImage;
+}
+
 + (UIImage *) gaussianBlur :(UIImage *)image :(int)blurAmount {
     cv::Mat mat;
     [image convertToMat:&mat :false];
