@@ -72,6 +72,15 @@ struct ContentView: View {
                         .background(Color.accentColor)
                         .cornerRadius(12)
                     
+                    Button("Stack blur") {
+                        viewModel.image = OpenCVWrapper.stackBlur(viewModel.image, 125)
+                    }.buttonStyle(BorderlessButtonStyle())
+                        .padding(.horizontal, 20)
+                        .padding(.vertical, 7)
+                        .foregroundColor(.white)
+                        .background(Color.accentColor)
+                        .cornerRadius(12)
+                    
                     Button("Resize 250x250") {
                         viewModel.image = OpenCVWrapper.resize(viewModel.image, 250, 250, 0)
                     }.buttonStyle(BorderlessButtonStyle())
