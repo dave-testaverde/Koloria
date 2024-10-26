@@ -19,6 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (UIImage *) toGrayscale :(UIImage *)image;
 + (UIImage *) gaussianBlur :(UIImage *)image :(int)blurAmount;
 + (UIImage *) stackBlur :(UIImage *)image :(int)blurAmount;
++ (UIImage *) medianBlur :(UIImage *)image :(int)blurAmount;
 @end
 
 NS_ASSUME_NONNULL_END

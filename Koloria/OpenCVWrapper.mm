@@ -82,6 +82,19 @@
     return blurImage;
 }
 
++ (UIImage *) medianBlur :(UIImage *)image :(int)blurAmount {
+    cv::Mat mat;
+    [image convertToMat:&mat :false];
+    
+    cv::Mat blur;
+    mat.copyTo(blur);
+    
+    cv::medianBlur(mat, blur, 1);
+    
+    UIImage* blurImage = MatToUIImage(blur);
+    return blurImage;
+}
+
 + (UIImage *) gaussianBlur :(UIImage *)image :(int)blurAmount {
     cv::Mat mat;
     [image convertToMat:&mat :false];
