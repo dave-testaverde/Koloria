@@ -19,7 +19,7 @@ struct ContentView: View {
     
     var body: some View {
         VStack {
-            Text("\(Int(viewModel.image.size.width)) x \(Int(viewModel.image.size.height))")
+            Text("\(Int(viewModel.image.size.width))px x \(Int(viewModel.image.size.height))px")
             
             Image(uiImage: viewModel.image)
                 .scaleEffect(currentZoom + totalZoom)

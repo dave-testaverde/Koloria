@@ -89,7 +89,7 @@
     cv::Mat blur;
     mat.copyTo(blur);
     
-    cv::medianBlur(mat, blur, 1);
+    cv::medianBlur(mat, blur, 15);
     
     UIImage* blurImage = MatToUIImage(blur);
     return blurImage;
