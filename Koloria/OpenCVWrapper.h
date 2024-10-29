@@ -20,6 +20,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (UIImage *) gaussianBlur :(UIImage *)image :(int)blurAmount;
 + (UIImage *) stackBlur :(UIImage *)image :(int)blurAmount;
 + (UIImage *) medianBlur :(UIImage *)image :(int)blurAmount;
++ (UIImage *) bilateralFilter :(UIImage *)image;
 @end
 
 NS_ASSUME_NONNULL_END

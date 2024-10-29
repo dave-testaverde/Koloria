@@ -95,6 +95,20 @@
     return blurImage;
 }
 
++ (UIImage *) bilateralFilter :(UIImage *)image {
+    cv::Mat mat;
+    [image convertToMat:&mat :false];
+    
+    cv::Mat blur;
+    mat.copyTo(blur);
+    
+    cv::cvtColor(mat, mat, cv::COLOR_BGRA2BGR);
+    cv::bilateralFilter(mat, blur, 15, 80, 80);
+    
+    UIImage* blurImage = MatToUIImage(blur);
+    return blurImage;
+}
+
 + (UIImage *) gaussianBlur :(UIImage *)image :(int)blurAmount {
     cv::Mat mat;
     [image convertToMat:&mat :false];
