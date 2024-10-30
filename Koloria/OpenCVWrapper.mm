@@ -102,6 +102,7 @@
     cv::Mat blur;
     mat.copyTo(blur);
     
+    // Channel reducing 4->3
     cv::cvtColor(mat, mat, cv::COLOR_BGRA2BGR);
     cv::bilateralFilter(mat, blur, 15, 80, 80);
     
