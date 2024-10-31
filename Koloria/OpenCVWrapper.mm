@@ -110,6 +110,19 @@
     return blurImage;
 }
 
++ (UIImage *) boxFilter :(UIImage *)image {
+    cv::Mat mat;
+    [image convertToMat:&mat :false];
+    
+    cv::Mat dst;
+    mat.copyTo(dst);
+    
+    cv::boxFilter(mat, dst, -1, cv::Size(16, 16));
+    
+    UIImage* dstImage = MatToUIImage(dst);
+    return dstImage;
+}
+
 + (UIImage *) gaussianBlur :(UIImage *)image :(int)blurAmount {
     cv::Mat mat;
     [image convertToMat:&mat :false];
