@@ -81,6 +81,15 @@ struct ContentView: View {
                         .background(Color.accentColor)
                         .cornerRadius(12)
                     
+                    Button("Box filter") {
+                        viewModel.image = OpenCVWrapper.boxFilter(viewModel.image)
+                    }.buttonStyle(BorderlessButtonStyle())
+                        .padding(.horizontal, 20)
+                        .padding(.vertical, 7)
+                        .foregroundColor(.white)
+                        .background(Color.accentColor)
+                        .cornerRadius(12)
+                    
                     Button("Bilateral filter") {
                         viewModel.image = OpenCVWrapper.bilateralFilter(viewModel.image)
                     }.buttonStyle(BorderlessButtonStyle())
