@@ -6,6 +6,7 @@
 //
 
 #import <opencv2/opencv.hpp>
+#include <opencv2/core/mat.hpp>
 #import <opencv2/imgcodecs/ios.h>
 #import "OpenCVWrapper.h"
 
@@ -118,6 +119,23 @@
     mat.copyTo(dst);
     
     cv::boxFilter(mat, dst, -1, cv::Size(16, 16));
+    
+    UIImage* dstImage = MatToUIImage(dst);
+    return dstImage;
+}
+
++ (UIImage *) filter2D :(UIImage *)image {
+    cv::Mat mat;
+    [image convertToMat:&mat :false];
+    
+    cv::Mat dst;
+    mat.copyTo(dst);
+    
+    // TODO: Update kernel size for a normalized box filter
+    //kernel_size = 3 + 2*( ind%5 );
+    //kernel = Mat::ones( kernel_size, kernel_size, CV_32F )/ (float)(kernel_size*kernel_size);
+    
+    cv::filter2D(mat, dst, 1, mat);
     
     UIImage* dstImage = MatToUIImage(dst);
     return dstImage;

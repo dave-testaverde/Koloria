@@ -22,6 +22,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (UIImage *) medianBlur :(UIImage *)image :(int)blurAmount;
 + (UIImage *) bilateralFilter :(UIImage *)image;
 + (UIImage *) boxFilter :(UIImage *)image;
++ (UIImage *) filter2D :(UIImage *)image;
 @end
 
 NS_ASSUME_NONNULL_END
