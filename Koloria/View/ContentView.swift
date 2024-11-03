@@ -99,6 +99,15 @@ struct ContentView: View {
                         .background(Color.accentColor)
                         .cornerRadius(12)
                     
+                    Button("Filter 2D") {
+                        viewModel.image = OpenCVWrapper.filter2D(viewModel.image)
+                    }.buttonStyle(BorderlessButtonStyle())
+                        .padding(.horizontal, 20)
+                        .padding(.vertical, 7)
+                        .foregroundColor(.white)
+                        .background(Color.accentColor)
+                        .cornerRadius(12)
+                    
                     Button("Median blur") {
                         viewModel.image = OpenCVWrapper.medianBlur(viewModel.image, 125)
                     }.buttonStyle(BorderlessButtonStyle())
