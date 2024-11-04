@@ -6,17 +6,21 @@
 //
 
 #import <opencv2/opencv.hpp>
-#include <opencv2/core/mat.hpp>
+#import <opencv2/core/mat.hpp>
+#import <opencv2/imgproc/imgproc.hpp>
+#import <opencv2/highgui/highgui.hpp>
 #import <opencv2/imgcodecs/ios.h>
 #import "OpenCVWrapper.h"
 
+using namespace cv;
+
 @interface UIImage (OpenCVWrapper)
-- (void)convertToMat: (cv::Mat *)pMat: (bool)alphaExists;
+- (void)convertToMat: (Mat *)pMat: (bool)alphaExists;
 @end
 
 @implementation UIImage (OpenCVWrapper)
 
-- (void)convertToMat: (cv::Mat *)pMat: (bool)alphaExists {
+- (void)convertToMat: (Mat *)pMat: (bool)alphaExists {
     if (self.imageOrientation == UIImageOrientationRight) {
         /*
          * When taking picture in portrait orientation,
@@ -24,7 +28,7 @@
          * and then rotate OpenCV Matrix to portrait orientation
          */
         UIImageToMat([UIImage imageWithCGImage:self.CGImage scale:1.0 orientation:UIImageOrientationUp], *pMat, alphaExists);
-        cv::rotate(*pMat, *pMat, cv::ROTATE_90_CLOCKWISE);
+        rotate(*pMat, *pMat, ROTATE_90_CLOCKWISE);
     } else if (self.imageOrientation == UIImageOrientationLeft) {
         /*
          * When taking picture in portrait upside-down orientation,
@@ -32,7 +36,7 @@
          * and then rotate OpenCV Matrix to portrait upside-down orientation
          */
         UIImageToMat([UIImage imageWithCGImage:self.CGImage scale:1.0 orientation:UIImageOrientationUp], *pMat, alphaExists);
-        cv::rotate(*pMat, *pMat, cv::ROTATE_90_COUNTERCLOCKWISE);
+        rotate(*pMat, *pMat, ROTATE_90_COUNTERCLOCKWISE);
     } else {
         /*
          * When taking picture in landscape orientation,
@@ -41,7 +45,7 @@
          */
         UIImageToMat(self, *pMat, alphaExists);
         if (self.imageOrientation == UIImageOrientationDown) {
-            cv::rotate(*pMat, *pMat, cv::ROTATE_180);
+            rotate(*pMat, *pMat, ROTATE_180);
         }
     }
 }
@@ -55,13 +59,13 @@
 }
 
 + (UIImage *) toGrayscale :(UIImage *)image {
-    cv::Mat mat;
+    Mat mat;
     [image convertToMat: &mat :false];
     
-    cv::Mat gray;
+    Mat gray;
 
     if (mat.channels() > 1) {
-        cv::cvtColor(mat, gray, cv::COLOR_RGB2GRAY);
+        cvtColor(mat, gray, COLOR_RGB2GRAY);
     } else {
         mat.copyTo(gray);
     }
@@ -71,101 +75,104 @@
 }
 
 + (UIImage *) stackBlur :(UIImage *)image :(int)blurAmount {
-    cv::Mat mat;
+    Mat mat;
     [image convertToMat:&mat :false];
     
-    cv::Mat blur;
+    Mat blur;
     mat.copyTo(blur);
     
-    cv::stackBlur(mat, blur, cv::Size(blurAmount, blurAmount));
+    stackBlur(mat, blur, cv::Size(blurAmount, blurAmount));
     
     UIImage* blurImage = MatToUIImage(blur);
     return blurImage;
 }
 
 + (UIImage *) medianBlur :(UIImage *)image :(int)blurAmount {
-    cv::Mat mat;
+    Mat mat;
     [image convertToMat:&mat :false];
     
-    cv::Mat blur;
+    Mat blur;
     mat.copyTo(blur);
     
-    cv::medianBlur(mat, blur, 15);
+    medianBlur(mat, blur, 15);
     
     UIImage* blurImage = MatToUIImage(blur);
     return blurImage;
 }
 
 + (UIImage *) bilateralFilter :(UIImage *)image {
-    cv::Mat mat;
+    Mat mat;
     [image convertToMat:&mat :false];
     
-    cv::Mat blur;
+    Mat blur;
     mat.copyTo(blur);
     
     // Channel reducing 4->3
-    cv::cvtColor(mat, mat, cv::COLOR_BGRA2BGR);
-    cv::bilateralFilter(mat, blur, 15, 80, 80);
+    cvtColor(mat, mat, COLOR_BGRA2BGR);
+    bilateralFilter(mat, blur, 15, 80, 80);
     
     UIImage* blurImage = MatToUIImage(blur);
     return blurImage;
 }
 
 + (UIImage *) boxFilter :(UIImage *)image {
-    cv::Mat mat;
+    Mat mat;
     [image convertToMat:&mat :false];
     
-    cv::Mat dst;
+    Mat dst;
     mat.copyTo(dst);
     
-    cv::boxFilter(mat, dst, -1, cv::Size(16, 16));
+    boxFilter(mat, dst, -1, cv::Size(16, 16));
     
     UIImage* dstImage = MatToUIImage(dst);
     return dstImage;
 }
 
 + (UIImage *) filter2D :(UIImage *)image {
-    cv::Mat mat;
+    Mat mat;
     [image convertToMat:&mat :false];
     
-    cv::Mat dst;
+    Mat dst;
     mat.copyTo(dst);
     
-    // TODO: Update kernel size for a normalized box filter
-    //kernel_size = 3 + 2*( ind%5 );
-    //kernel = Mat::ones( kernel_size, kernel_size, CV_32F )/ (float)(kernel_size*kernel_size);
+    /// value -1 indicates that the dst depth is the same as the source
+    int ddepth = -1;
     
-    cv::filter2D(mat, dst, 1, mat);
+    int ind = 100000;
+    int kernel_size = 3 + 2*( ind%5 );
+    Mat kernel = Mat::ones( kernel_size, kernel_size, CV_32F )/ (float)(kernel_size*kernel_size);
+    
+    filter2D(mat, dst, ddepth, kernel);
     
     UIImage* dstImage = MatToUIImage(dst);
     return dstImage;
 }
 
 + (UIImage *) gaussianBlur :(UIImage *)image :(int)blurAmount {
-    cv::Mat mat;
+    Mat mat;
     [image convertToMat:&mat :false];
     
-    cv::Mat blur;
+    Mat blur;
     mat.copyTo(blur);
     
-    cv::GaussianBlur(mat, blur, cv::Size(blurAmount, blurAmount), 0.0);
+    GaussianBlur(mat, blur, cv::Size(blurAmount, blurAmount), 0.0);
     
     UIImage* blurImage = MatToUIImage(blur);
     return blurImage;
 }
 
 + (UIImage *) resize :(UIImage *)image :(int)width :(int)height :(int)interpolation {
-    cv::Mat mat;
+    Mat mat;
     [image convertToMat: &mat :false];
     
     if (mat.channels() == 4) {
         [image convertToMat: &mat :true];
     }
     
-    cv::Mat resized;
+    Mat resized;
     cv::Size size = {width, height};
     
-    cv::resize(mat, resized, size, 0, 0, interpolation);
+    resize(mat, resized, size, 0, 0, interpolation);
     
     UIImage *resizedImg = MatToUIImage(resized);
     
