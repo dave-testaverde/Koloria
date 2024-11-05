@@ -6,9 +6,6 @@
 //
 
 #import <opencv2/opencv.hpp>
-#import <opencv2/core/mat.hpp>
-#import <opencv2/imgproc/imgproc.hpp>
-#import <opencv2/highgui/highgui.hpp>
 #import <opencv2/imgcodecs/ios.h>
 #import "OpenCVWrapper.h"
 
@@ -142,7 +139,23 @@ using namespace cv;
     int kernel_size = 3 + 2*( ind%5 );
     Mat kernel = Mat::ones( kernel_size, kernel_size, CV_32F )/ (float)(kernel_size*kernel_size);
     
-    filter2D(mat, dst, ddepth, kernel);
+    Mat kernel_a = (Mat_<double>(3,3) << 0, 0, 0, 1, 1, 1, 0, 0, 0);
+    Mat kernel_b = Mat::ones(5, 5, CV_64F);
+    
+    filter2D(mat, dst, ddepth, kernel_b);
+    
+    UIImage* dstImage = MatToUIImage(dst);
+    return dstImage;
+}
+
++ (UIImage *) flip_both_axes :(UIImage *)image {
+    Mat mat;
+    [image convertToMat:&mat :false];
+    
+    Mat dst;
+    mat.copyTo(dst);
+    
+    flip(mat, dst, -1);
     
     UIImage* dstImage = MatToUIImage(dst);
     return dstImage;
