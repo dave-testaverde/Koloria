@@ -23,7 +23,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (UIImage *) bilateralFilter :(UIImage *)image;
 + (UIImage *) boxFilter :(UIImage *)image;
 + (UIImage *) filter2D :(UIImage *)image;
-+ (UIImage *) flip_both_axes :(UIImage *)image;
++ (UIImage *) flip_axes :(UIImage *)image :(int)direction;
 @end
 
 NS_ASSUME_NONNULL_END

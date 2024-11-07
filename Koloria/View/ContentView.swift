@@ -100,7 +100,7 @@ struct ContentView: View {
                         .cornerRadius(12)
                     
                     Button("Flip Both Axis") {
-                        viewModel.image = OpenCVWrapper.flip_both_axes(viewModel.image)
+                        viewModel.image = OpenCVWrapper.flip_axes(viewModel.image, DirectionFLIP.BOTH)
                     }.buttonStyle(BorderlessButtonStyle())
                         .padding(.horizontal, 20)
                         .padding(.vertical, 7)
@@ -184,6 +184,16 @@ struct ContentView: View {
             }
         }
     }
+}
+
+extension ContentView {
+    
+    struct DirectionFLIP {
+        static let BOTH: Int32 = -1
+        static let HORIZONTALLY: Int32 = 0
+        static let VERTICALLY: Int32 = 1
+    }
+    
 }
 
 #Preview {

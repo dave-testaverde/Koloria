@@ -148,14 +148,14 @@ using namespace cv;
     return dstImage;
 }
 
-+ (UIImage *) flip_both_axes :(UIImage *)image {
++ (UIImage *) flip_axes :(UIImage *)image :(int)direction {
     Mat mat;
     [image convertToMat:&mat :false];
     
     Mat dst;
     mat.copyTo(dst);
     
-    flip(mat, dst, -1);
+    flip(mat, dst, direction);
     
     UIImage* dstImage = MatToUIImage(dst);
     return dstImage;
