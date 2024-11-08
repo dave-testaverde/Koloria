@@ -99,6 +99,15 @@ struct ContentView: View {
                         .background(Color.accentColor)
                         .cornerRadius(12)
                     
+                    Button("Flip Vertically Axis") {
+                        viewModel.image = OpenCVWrapper.flip_axes(viewModel.image, DirectionFLIP.VERTICALLY)
+                    }.buttonStyle(BorderlessButtonStyle())
+                        .padding(.horizontal, 20)
+                        .padding(.vertical, 7)
+                        .foregroundColor(.white)
+                        .background(Color.accentColor)
+                        .cornerRadius(12)
+                    
                     Button("Flip Both Axis") {
                         viewModel.image = OpenCVWrapper.flip_axes(viewModel.image, DirectionFLIP.BOTH)
                     }.buttonStyle(BorderlessButtonStyle())
