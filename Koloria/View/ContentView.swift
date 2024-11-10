@@ -206,7 +206,7 @@ struct ContentView: View {
 
 extension ContentView {
     
-    struct DirectionFLIP {
+    struct Direction {
         static let BOTH: Int32 = -1
         static let HORIZONTALLY: Int32 = 0
         static let VERTICALLY: Int32 = 1
