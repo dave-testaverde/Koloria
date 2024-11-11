@@ -142,7 +142,24 @@ using namespace cv;
     Mat kernel_a = (Mat_<double>(3,3) << 0, 0, 0, 1, 1, 1, 0, 0, 0);
     Mat kernel_b = Mat::ones(5, 5, CV_64F);
     
-    filter2D(mat, dst, ddepth, kernel_b);
+    filter2D(mat, dst, ddepth, kernel);
+    
+    UIImage* dstImage = MatToUIImage(dst);
+    return dstImage;
+}
+
++ (UIImage *) filter2D_a :(UIImage *)image {
+    Mat mat;
+    [image convertToMat:&mat :false];
+    
+    Mat dst;
+    mat.copyTo(dst);
+    
+    int ddepth = -1;
+    
+    Mat kernel_a = (Mat_<double>(3,3) << 0, 0, 0, 1, 1, 1, 0, 0, 0);
+    
+    filter2D(mat, dst, ddepth, kernel_a);
     
     UIImage* dstImage = MatToUIImage(dst);
     return dstImage;
