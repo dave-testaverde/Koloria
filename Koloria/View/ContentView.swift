@@ -100,7 +100,7 @@ struct ContentView: View {
                         .cornerRadius(12)
                     
                     Button("Flip Horizontally Axis") {
-                        viewModel.image = OpenCVWrapper.flip_axes(viewModel.image, DirectionFLIP.HORIZONTALLY)
+                        viewModel.image = OpenCVWrapper.flip_axes(viewModel.image, Direction.HORIZONTALLY)
                     }.buttonStyle(BorderlessButtonStyle())
                         .padding(.horizontal, 20)
                         .padding(.vertical, 7)
@@ -109,7 +109,7 @@ struct ContentView: View {
                         .cornerRadius(12)
                     
                     Button("Flip Vertically Axis") {
-                        viewModel.image = OpenCVWrapper.flip_axes(viewModel.image, DirectionFLIP.VERTICALLY)
+                        viewModel.image = OpenCVWrapper.flip_axes(viewModel.image, Direction.VERTICALLY)
                     }.buttonStyle(BorderlessButtonStyle())
                         .padding(.horizontal, 20)
                         .padding(.vertical, 7)
@@ -118,7 +118,7 @@ struct ContentView: View {
                         .cornerRadius(12)
                     
                     Button("Flip Both Axis") {
-                        viewModel.image = OpenCVWrapper.flip_axes(viewModel.image, DirectionFLIP.BOTH)
+                        viewModel.image = OpenCVWrapper.flip_axes(viewModel.image, Direction.BOTH)
                     }.buttonStyle(BorderlessButtonStyle())
                         .padding(.horizontal, 20)
                         .padding(.vertical, 7)
@@ -128,6 +128,15 @@ struct ContentView: View {
                     
                     Button("Filter 2D") {
                         viewModel.image = OpenCVWrapper.filter2D(viewModel.image)
+                    }.buttonStyle(BorderlessButtonStyle())
+                        .padding(.horizontal, 20)
+                        .padding(.vertical, 7)
+                        .foregroundColor(.white)
+                        .background(Color.accentColor)
+                        .cornerRadius(12)
+                    
+                    Button("Filter 2D A") {
+                        viewModel.image = OpenCVWrapper.filter2D_a(viewModel.image)
                     }.buttonStyle(BorderlessButtonStyle())
                         .padding(.horizontal, 20)
                         .padding(.vertical, 7)
