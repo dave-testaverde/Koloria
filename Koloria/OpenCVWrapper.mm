@@ -165,6 +165,23 @@ using namespace cv;
     return dstImage;
 }
 
++ (UIImage *) filter2D_b :(UIImage *)image {
+    Mat mat;
+    [image convertToMat:&mat :false];
+    
+    Mat dst;
+    mat.copyTo(dst);
+    
+    int ddepth = -1;
+    
+    Mat kernel_b = Mat::ones(5, 5, CV_64F);
+    
+    filter2D(mat, dst, ddepth, kernel_b);
+    
+    UIImage* dstImage = MatToUIImage(dst);
+    return dstImage;
+}
+
 + (UIImage *) flip_axes :(UIImage *)image :(int)direction {
     Mat mat;
     [image convertToMat:&mat :false];
