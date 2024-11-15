@@ -9,6 +9,9 @@
 #import <opencv2/imgcodecs/ios.h>
 #import "OpenCVWrapper.h"
 
+#include <vector>
+
+using namespace std;
 using namespace cv;
 
 @interface UIImage (OpenCVWrapper)
