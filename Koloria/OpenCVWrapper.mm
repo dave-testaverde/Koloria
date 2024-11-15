@@ -185,6 +185,24 @@ using namespace cv;
     return dstImage;
 }
 
++ (UIImage *) buildPyramid :(UIImage *)image {
+    Mat mat;
+    [image convertToMat:&mat :false];
+    
+    Mat dst;
+    mat.copyTo(dst);
+    
+    /// Describes layers of the pyramid 
+    int maxlevel = 4;
+
+    cvtColor(mat, mat, COLOR_BGRA2BGR);
+    vector<Mat> dstVect;
+    buildPyramid(mat, dstVect, maxLevel);
+    
+    UIImage* dstImage = MatToUIImage(dstVect[3]);
+    return dstImage;
+}
+
 + (UIImage *) flip_axes :(UIImage *)image :(int)direction {
     Mat mat;
     [image convertToMat:&mat :false];
