@@ -185,7 +185,7 @@ using namespace cv;
     return dstImage;
 }
 
-+ (UIImage *) buildPyramid :(UIImage *)image {
++ (UIImage *) buildPyramid :(UIImage *)image :(int)maxlevel {
     Mat mat;
     [image convertToMat:&mat :false];
     
@@ -193,7 +193,7 @@ using namespace cv;
     mat.copyTo(dst);
     
     /// Describes layers of the pyramid 
-    int maxlevel = 4;
+    int maxLevel = maxlevel;
 
     cvtColor(mat, mat, COLOR_BGRA2BGR);
     vector<Mat> dstVect;

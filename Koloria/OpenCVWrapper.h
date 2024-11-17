@@ -26,7 +26,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (UIImage *) filter2D_a :(UIImage *)image;
 + (UIImage *) filter2D_b :(UIImage *)image;
 + (UIImage *) flip_axes :(UIImage *)image :(int)direction;
-+ (UIImage *) buildPyramid :(UIImage *)image;
++ (UIImage *) buildPyramid :(UIImage *)image :(int)maxlevel;
 @end
 
 NS_ASSUME_NONNULL_END
