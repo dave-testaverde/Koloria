@@ -144,8 +144,8 @@ struct ContentView: View {
                         .background(Color.accentColor)
                         .cornerRadius(12)
                     
-                    Button("Filter Pyramid") {
-                        viewModel.image = OpenCVWrapper.buildPyramid(viewModel.image, 4)
+                    Button("Filter Pyramid 4L") {
+                        viewModel.image = OpenCVWrapper.buildPyramid(viewModel.image, 4, 1)
                     }.buttonStyle(BorderlessButtonStyle())
                         .padding(.horizontal, 20)
                         .padding(.vertical, 7)

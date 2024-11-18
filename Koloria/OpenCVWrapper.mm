@@ -185,7 +185,7 @@ using namespace cv;
     return dstImage;
 }
 
-+ (UIImage *) buildPyramid :(UIImage *)image :(int)maxlevel {
++ (UIImage *) buildPyramid :(UIImage *)image :(int)maxlevel :(int)indexElem {
     Mat mat;
     [image convertToMat:&mat :false];
     
@@ -199,7 +199,7 @@ using namespace cv;
     vector<Mat> dstVect;
     buildPyramid(mat, dstVect, maxLevel);
     
-    UIImage* dstImage = MatToUIImage(dstVect[3]);
+    UIImage* dstImage = MatToUIImage(dstVect[indexElem]);
     return dstImage;
 }
 
