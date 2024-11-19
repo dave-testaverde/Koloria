@@ -195,11 +195,10 @@ using namespace cv;
     /// Describes layers of the pyramid 
     int maxLevel = maxlevel;
 
-    cvtColor(mat, mat, COLOR_BGRA2BGR);
     vector<Mat> dstVect;
     buildPyramid(mat, dstVect, maxLevel);
     
-    UIImage* dstImage = MatToUIImage(dstVect[indexElem]);
+    UIImage* dstImage = MatToUIImage((indexElem <= maxlevel) ? dstVect[indexElem] : mat);
     return dstImage;
 }
 

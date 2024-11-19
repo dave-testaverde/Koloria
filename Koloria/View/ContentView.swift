@@ -144,8 +144,18 @@ struct ContentView: View {
                         .background(Color.accentColor)
                         .cornerRadius(12)
                     
-                    Button("Filter Pyramid 4L") {
+                    Button("Filter Pyramid 4L->1") {
                         viewModel.image = OpenCVWrapper.buildPyramid(viewModel.image, 4, 1)
+                    }.buttonStyle(BorderlessButtonStyle())
+                        .padding(.horizontal, 20)
+                        .padding(.vertical, 7)
+                        .foregroundColor(.white)
+                        .background(Color.accentColor)
+                        .cornerRadius(12)
+                    
+                    /// Image is divided into eight layers and the eighth layer is selected
+                    Button("Filter Pyramid 8Ls->8th") {
+                        viewModel.image = OpenCVWrapper.buildPyramid(viewModel.image, 8, 8)
                     }.buttonStyle(BorderlessButtonStyle())
                         .padding(.horizontal, 20)
                         .padding(.vertical, 7)
