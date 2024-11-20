@@ -115,6 +115,8 @@ using namespace cv;
     return blurImage;
 }
 
+
+
 + (UIImage *) boxFilter :(UIImage *)image {
     Mat mat;
     [image convertToMat:&mat :false];
@@ -180,6 +182,31 @@ using namespace cv;
     Mat kernel_b = Mat::ones(5, 5, CV_64F);
     
     filter2D(mat, dst, ddepth, kernel_b);
+    
+    UIImage* dstImage = MatToUIImage(dst);
+    return dstImage;
+}
+
++ (UIImage *) dilate :(UIImage *)image {
+    Mat mat;
+    [image convertToMat:&mat :false];
+    
+    Mat dst;
+    mat.copyTo(dst);
+    
+    int dilation_elem = 0;
+    int dilation_size = 1;
+    int dilation_type = 0;
+    
+    if( dilation_elem == 0 ){ dilation_type = MORPH_RECT; }
+    else if( dilation_elem == 1 ){ dilation_type = MORPH_CROSS; }
+    else if( dilation_elem == 2) { dilation_type = MORPH_ELLIPSE; }
+    
+    Mat kernel = getStructuringElement( dilation_type,
+                         cv::Size( 2*dilation_size + 1, 2*dilation_size+1 ),
+                         cv::Point( dilation_size, dilation_size ) );
+    
+    dilate(mat, dst, kernel);
     
     UIImage* dstImage = MatToUIImage(dst);
     return dstImage;
