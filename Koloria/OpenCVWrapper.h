@@ -23,6 +23,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (UIImage *) bilateralFilter :(UIImage *)image;
 + (UIImage *) boxFilter :(UIImage *)image;
 + (UIImage *) dilate :(UIImage *)image;
++ (UIImage *) erode :(UIImage *)image;
 + (UIImage *) filter2D :(UIImage *)image;
 + (UIImage *) filter2D_a :(UIImage *)image;
 + (UIImage *) filter2D_b :(UIImage *)image;

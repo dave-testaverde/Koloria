@@ -212,6 +212,31 @@ using namespace cv;
     return dstImage;
 }
 
++ (UIImage *) erode :(UIImage *)image {
+    Mat mat;
+    [image convertToMat:&mat :false];
+    
+    Mat dst;
+    mat.copyTo(dst);
+    
+    int dilation_elem = 0;
+    int dilation_size = 1;
+    int dilation_type = 0;
+    
+    if( dilation_elem == 0 ){ dilation_type = MORPH_RECT; }
+    else if( dilation_elem == 1 ){ dilation_type = MORPH_CROSS; }
+    else if( dilation_elem == 2) { dilation_type = MORPH_ELLIPSE; }
+    
+    Mat kernel = getStructuringElement( dilation_type,
+                         cv::Size( 2*dilation_size + 1, 2*dilation_size+1 ),
+                         cv::Point( dilation_size, dilation_size ) );
+    
+    erode(mat, dst, kernel);
+    
+    UIImage* dstImage = MatToUIImage(dst);
+    return dstImage;
+}
+
 + (UIImage *) buildPyramid :(UIImage *)image :(int)maxlevel :(int)indexElem {
     Mat mat;
     [image convertToMat:&mat :false];
