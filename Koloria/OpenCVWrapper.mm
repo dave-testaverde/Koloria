@@ -154,6 +154,21 @@ using namespace cv;
     return dstImage;
 }
 
++ (UIImage *) pyrMeanShiftFiltering :(UIImage *)image {
+    Mat mat;
+    [image convertToMat:&mat :false];
+    
+    Mat dst;
+    mat.copyTo(dst);
+    
+    cvtColor(mat, mat, COLOR_BGRA2BGR);
+    /// source: 8-bit, 3-channel
+    pyrMeanShiftFiltering(mat, dst, 10, 35, 3);
+    
+    UIImage* dstImage = MatToUIImage(dst);
+    return dstImage;
+}
+
 + (UIImage *) filter2D :(UIImage *)image {
     Mat mat;
     [image convertToMat:&mat :false];

@@ -26,6 +26,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (UIImage *) erode :(UIImage *)image;
 + (UIImage *) pyrDown :(UIImage *)image;
 + (UIImage *) pyrUp :(UIImage *)image;
++ (UIImage *) pyrMeanShiftFiltering :(UIImage *)image;
 + (UIImage *) filter2D :(UIImage *)image;
 + (UIImage *) filter2D_a :(UIImage *)image;
 + (UIImage *) filter2D_b :(UIImage *)image;
