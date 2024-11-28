@@ -141,6 +141,19 @@ using namespace cv;
     return dstImage;
 }
 
++ (UIImage *) pyrUp :(UIImage *)image {
+    Mat mat;
+    [image convertToMat:&mat :false];
+    
+    Mat dst;
+    mat.copyTo(dst);
+    
+    pyrUp(mat, dst);
+    
+    UIImage* dstImage = MatToUIImage(dst);
+    return dstImage;
+}
+
 + (UIImage *) filter2D :(UIImage *)image {
     Mat mat;
     [image convertToMat:&mat :false];
