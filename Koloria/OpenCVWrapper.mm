@@ -115,8 +115,6 @@ using namespace cv;
     return blurImage;
 }
 
-
-
 + (UIImage *) boxFilter :(UIImage *)image {
     Mat mat;
     [image convertToMat:&mat :false];
@@ -125,6 +123,19 @@ using namespace cv;
     mat.copyTo(dst);
     
     boxFilter(mat, dst, -1, cv::Size(16, 16));
+    
+    UIImage* dstImage = MatToUIImage(dst);
+    return dstImage;
+}
+
++ (UIImage *) pyrDown :(UIImage *)image {
+    Mat mat;
+    [image convertToMat:&mat :false];
+    
+    Mat dst;
+    mat.copyTo(dst);
+    
+    pyrDown(mat, dst);
     
     UIImage* dstImage = MatToUIImage(dst);
     return dstImage;
