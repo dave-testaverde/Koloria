@@ -63,6 +63,15 @@ struct ContentView: View {
                         .background(Color.accentColor)
                         .cornerRadius(12)
                     
+                    Button("PyrDown") {
+                        viewModel.image = OpenCVWrapper.pyrDown(viewModel.image)
+                    }.buttonStyle(BorderlessButtonStyle())
+                        .padding(.horizontal, 20)
+                        .padding(.vertical, 7)
+                        .foregroundColor(.white)
+                        .background(Color.accentColor)
+                        .cornerRadius(12)
+                    
                     Button("Resize 320x320") {
                         viewModel.image = OpenCVWrapper.resize(viewModel.image, 320, 320, 0)
                     }.buttonStyle(BorderlessButtonStyle())
